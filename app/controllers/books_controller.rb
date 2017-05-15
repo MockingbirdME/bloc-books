@@ -11,11 +11,11 @@ class BooksController < BlocWorks::Controller
   end
 
   def show
-    @id = getID
-    @book = Book.find(@id)
-    binding.pry
-
-    render :show, book: @book
+    # @id = getID
+    # @book = Book.find(@id)
+    # binding.pry
+    book = Book.find(params['id'])
+    render :show, book: book
     # book = Book.first
     # render :show, book: book
   end
