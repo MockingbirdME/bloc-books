@@ -1,3 +1,11 @@
 require './config/application'
 require 'pry'
-run BlocWorks::Application.new
+app = BlocWorks::Application.new
+
+use Rack::ContentType
+
+app.route do
+  resources :books
+end
+
+run(app)
